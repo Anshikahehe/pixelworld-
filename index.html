@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Navigable Map</title>
+    <title>pixelworld</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body id="body">
     <div id="mobile-error">
-        <h2>hi!</h2>
+        <h2>hey, there!</h2>
         <h4>
             unfortunately, this isn't available for mobile or smaller screens :( hop on ur laptop n check it out!
         </h4>
@@ -19,10 +21,13 @@
         <div id="welcome-content">
             <h1>welcome!</h1>
             <p>
-                hello, my good bestie!
-                <!-- (hi, my love <3 i made you a little game. check it out!) -->
+                hi, my love!
+                <3 <br />i made you a little game (with a lot of effort). check it out!
                 <br />
-                <br /> your objective is to reunite with me! little me is waiting for you somewhere in this little farm area. good luck!!!
+                <br />
+                <br />
+                <strong>objective:</strong> reunite with me! little me is waiting for you somewhere in this little farm area. <br />
+                <br /> good luck!!!
             </p>
             <button id="start-button">begin</button>
         </div>
@@ -40,15 +45,13 @@
     </div>
     <div id="clue">
         <img id="heart" src="img/heart.gif" />
-        <p>
-            you found one heart! <br /><br /> there are 3 total
-        </p>
+        <p>you found one heart!</p>
         <button id="collect-heart">collect</button>
     </div>
     <div id="almost-final-popup">
-        <h3>hey bestie!</h3>
+        <h3>hey, angel!</h3>
         <p>
-            you found me! but! you need to collect 3 hearts, stored in treasure chests across the map, in order to win the game. come back to me when you've collected all 3.
+            you found me! but! you need to collect 3 hearts, stored in treasure chests across the map, in order to win the game. <br /><br />come back to me when you've collected all 3.
         </p>
         <button id="close-almost">x</button>
     </div>
@@ -60,11 +63,23 @@
         the final question for you.... will u be my valentine? ❤️ -->
         </p>
         <div>
-            <button id="yes">yay!</button>
-            <!-- <button id="no-button">no</button> -->
+            <button id="yes">yes!!</button>
+            <button id="no-button" onmousemove="moveButton()">no</button>
         </div>
     </div>
+    <div id="heart-counter-box">
+        <img src="img/heart.gif" />
+        <p id="heart-counter"></p>
+    </div>
     <img id="confetti" src="img/confetti.gif" />
+    <audio id="myAudio" loop>
+      <source src="audio/bg.mp3" type="audio/mp3" />
+      Your browser does not support the audio tag.
+    </audio>
+    <audio id="chestAudio">
+      <source src="audio/chest.wav" type="audio/wav" />
+      Your browser does not support the audio tag.
+    </audio>
     <script src="script.js"></script>
 </body>
 

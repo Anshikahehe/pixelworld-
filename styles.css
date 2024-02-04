@@ -111,8 +111,30 @@ body button {
 
 #welcome-page button {
     margin: 25px 0;
-    background-color: transparent;
+    background-color: rgba(266, 266, 266, 0.3);
     padding: 10px;
+}
+
+#heart-counter-box {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    background: rgba(266, 266, 266, 0.7);
+    color: black;
+    font-size: medium;
+    /* border-radius: 20px; */
+    border: black solid 1px;
+}
+
+#heart-counter-box img {
+    max-width: 3vw;
+}
+
+#heart-counter {
+    margin: 0;
 }
 
 .chest {
@@ -164,7 +186,7 @@ body button {
 
 .clue-show {
     top: 50% !important;
-    transition: top 0.7s ease-in;
+    transition: top 1s ease-in;
 }
 
 #clue button {
@@ -196,6 +218,11 @@ body button {
     text-align: center;
     border: black 2px solid;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#no-button {
+    transition: transform 0.3s ease-out;
+    background-color: white !important;
 }
 
 #final-popup p,

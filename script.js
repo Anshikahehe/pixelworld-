@@ -373,6 +373,30 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     var hearts = 0;
     var doneClues = [];
+    const heartCounter = document.getElementById("heart-counter");
+
+    //set counter
+    heartCounter.innerHTML = "" + hearts + " / 3";
+
+    //audio
+    var audio = document.getElementById("myAudio");
+    var chestAudio = document.getElementById("chestAudio");
+
+    var hasUserInteracted = false;
+
+    document.addEventListener("click", function() {
+        if (!hasUserInteracted) {
+            hasUserInteracted = true;
+            console.log(
+                "User has interacted with the document. Starting audio playback..."
+            );
+
+            // Autoplay and loop the audio when the user interacts with the document
+            audio.autoplay = true;
+            audio.loop = true;
+            audio.play();
+        }
+    });
 
     start.addEventListener("click", () => {
         console.log("start clicked!");
@@ -445,8 +469,15 @@ document.addEventListener("DOMContentLoaded", async function() {
                     //popup
                     clue.classList.add("clue-show");
 
+                    //sound
+                    chestAudio.play();
+
                     console.log("new heart found!!!");
                     hearts++;
+
+                    //set counter
+                    heartCounter.innerHTML = "" + hearts + " / 3";
+
                     doneClues.push(item.id);
                 } else {
                     console.log("alr found heart");
@@ -538,7 +569,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     let collisionMap;
 
     try {
-        const response = await fetch("json/collision_map.json");
+        const response = await fetch("json/collision_map2.json");
         collisionMap = await response.json();
         console.log(
             "Collision map loaded successfully. Rows:",
@@ -726,3 +757,14 @@ document.addEventListener("DOMContentLoaded", async function() {
     // Initialize the character position
     updateCharacterPosition();
 });
+
+function moveButton() {
+    var button = document.getElementById("no-button");
+
+    var newX =
+        Math.floor(Math.random() * (2 * (window.innerWidth / 2) + 1)) -
+        window.innerWidth / 2;
+    var newY = Math.random() * (window.innerHeight / 2);
+
+    button.style.transform = `translate(${newX}px, ${-newY}px)`;
+}
