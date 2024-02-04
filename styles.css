@@ -18,9 +18,9 @@ body button {
 }
 
 #map-container {
-    width: 300vw;
+    width: 3000px;
     /* Set a maximum width to prevent it from becoming too large */
-    height: 300vw;
+    height: 3000px;
     background-size: cover;
     position: absolute;
     overflow: hidden;
@@ -28,9 +28,9 @@ body button {
 }
 
 #map-img {
-    width: 300vw;
+    width: 3000px;
     /* Set a maximum width to prevent it from becoming too large */
-    height: 300vw;
+    height: 3000px;
     /* Set a maximum height to prevent it from becoming too large */
     z-index: 0;
 }
@@ -144,7 +144,7 @@ body button {
     top: -50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px;
+    width: 300px;
     padding: 30px;
     background-color: white;
     z-index: 99;
@@ -215,7 +215,7 @@ body button {
     left: 50%;
     padding: 10px;
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 500px;
     height: fit-content;
     background-color: white;
     z-index: 99;
@@ -241,6 +241,7 @@ body button {
     position: fixed;
     height: 100vh;
     top: -100%;
+    left: 0;
     transition: top 0.4s linear;
 }
 
