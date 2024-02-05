@@ -417,8 +417,12 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     setInterval(checkChest, 100);
     setInterval(checkGoal, 100);
+    let chestFoundRecently = false;
 
     function checkChest() {
+        if (chestFoundRecently) {
+            return;
+        }
         const chests = document.getElementsByClassName("chest");
 
         var charTop = parseInt(
@@ -479,6 +483,13 @@ document.addEventListener("DOMContentLoaded", async function() {
                     heartCounter.innerHTML = "" + hearts + " / 3";
 
                     doneClues.push(item.id);
+                    console.log(item.id + "found!");
+                    // Set the flag to true to prevent further calls to checkChest until next interval
+                    chestFoundRecently = true;
+
+                    setTimeout(() => {
+                        chestFoundRecently = false;
+                    }, 1000); // Set a delay (in milliseconds) before allowing the function to be called again
                 } else {
                     console.log("alr found heart");
                 }
